@@ -114,11 +114,11 @@ fi
 
 # Check  FLUTTER_CLEANUP var to delete all files or keep it.
 if [ "$FLUTTER_CLEANUP" != false ]; then
-  print "Cleaning up Flutter source files and the SDK"
+  print "Cleaning up Flutter source files and the SDK without nginx"
 
   mkdir -p $SOURCE_DIR/TO_DELETE
 
-  mv !("TO_DELETE"|"build"|"config") TO_DELETE
+  mv !("TO_DELETE"|"build"|"config"|"bin"|"nginx") TO_DELETE
   rm -rf TO_DELETE
 fi
 
